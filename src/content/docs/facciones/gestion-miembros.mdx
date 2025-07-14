@@ -1,0 +1,616 @@
+---
+title: Gestión de Miembros
+description: Construye y lidera equipos efectivos con sistemas de rangos, reclutamiento inteligente y manejo de conflictos internos
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+
+# Gestión de Miembros
+
+Una facción exitosa no se construye solo con poder y territorio - se construye con **personas**. Esta sección te enseñará a reclutar inteligentemente, desarrollar liderazgo, manejar conflictos internos, y crear una cultura que mantenga unidos a tus miembros en los momentos más difíciles.
+
+## La Jerarquía de Facciones
+
+Understanding the rank system is crucial for effective management. Each rank has specific responsibilities and capabilities.
+
+### Sistema de Rangos
+
+<CardGrid>
+  <Card title="👑 Admin (Líder)" icon="star">
+    **Control absoluto de la facción**
+    
+    - Puede promover/degradar a cualquiera
+    - Acceso total a recursos y bóvedas
+    - Controla diplomacia y declaraciones de guerra
+    - Puede disolver la facción
+  </Card>
+  
+  <Card title="🎖️ Coleader (Segundo)" icon="award">
+    **Solo puede haber UNO**
+    
+    - Casi todos los permisos del admin
+    - Sucede automáticamente si el admin se va
+    - Maneja operaciones día a día
+    - Toma decisiones en ausencia del líder
+  </Card>
+  
+  <Card title="🛡️ Moderador" icon="shield">
+    **Gestión operacional**
+    
+    - Invita y expulsa miembros
+    - Maneja conflictos internos
+    - Supervisa construcciones
+    - Entrena nuevos miembros
+  </Card>
+  
+  <Card title="⚔️ Miembro Normal" icon="users">
+    **La columna vertebral**
+    
+    - Constructores y guerreros principales
+    - Contribuyen recursos regularmente
+    - Participan en todas las actividades
+    - Siguen órdenes superiores
+  </Card>
+  
+  <Card title="🌱 Recluta" icon="user-plus">
+    **Período de prueba**
+    
+    - Acceso limitado a recursos
+    - Bajo supervisión constante
+    - Deben demostrar lealtad y competencia
+    - Pueden ser expulsados fácilmente
+  </Card>
+</CardGrid>
+
+### Responsabilidades por Rango
+
+<Tabs>
+  <TabItem label="👑 Admin">
+    
+**Responsabilidades estratégicas:** Visión y dirección a largo plazo, diplomacia con otras facciones, decisiones de guerra y paz, gestión de recursos críticos, resolución de conflictos mayores.
+
+**Decisiones diarias:** Promociones y degradaciones, nuevas alianzas o enemistades, grandes proyectos de construcción, distribución de roles especializados, política de reclutamiento.
+
+**¡NUNCA delegues el comando admin a alguien en quien no confías 100%!**
+
+  </TabItem>
+  <TabItem label="🎖️ Coleader">
+    
+**Gestión operacional:** Supervisar actividades diarias, coordinar proyectos de construcción, mantener moral alta, entrenar moderadores, comunicación con aliados.
+
+**Responsabilidades específicas:** Gestionar ausencias del admin, organizar eventos internos, supervisar entrenamiento PvP, mantener inventarios de recursos, mediar conflictos entre miembros.
+
+  </TabItem>
+  <TabItem label="🛡️ Moderador">
+    
+**Gestión de personal:** Proceso de reclutamiento, entrenamiento de nuevos, supervisión de reclutas, expulsión de miembros problemáticos, mantenimiento de reglas internas.
+
+**Operaciones:** Organizar construcciones grupales, supervisar mining operations, coordinar defensas, mantener comunicación activa, reportar al liderazgo.
+
+  </TabItem>
+</Tabs>
+
+## Reclutamiento Estratégico
+
+### Calidad vs Cantidad
+
+**El error más común:** Reclutar a cualquiera que quiera unirse.
+
+**La verdad:** 5 miembros leales y competentes valen más que 20 miembros mediocres.
+
+### Criterios de Reclutamiento
+
+**Evaluación de candidatos:**
+
+<CardGrid>
+  <Card title="🎯 Habilidades" icon="zap">
+    **¿Qué pueden aportar?**
+    
+    - PvP, construcción, redstone, farming
+    - Experiencia en facciones
+    - Conocimiento de otros plugins
+    - Habilidades de liderazgo
+  </Card>
+  
+  <Card title="⏰ Disponibilidad" icon="clock">
+    **¿Cuándo están activos?**
+    
+    - Horas de juego por día/semana
+    - Zona horaria compatible
+    - Disponibilidad para eventos importantes
+    - Compromiso a largo plazo
+  </Card>
+  
+  <Card title="🧠 Mentalidad" icon="brain">
+    **¿Encajan con la cultura?**
+    
+    - Actitud hacia teamwork
+    - Manejo de conflictos
+    - Respuesta a autoridad
+    - Objetivos personales vs grupales
+  </Card>
+  
+  <Card title="📜 Historia" icon="book">
+    **¿Qué antecedentes tienen?**
+    
+    - Facciones anteriores y por qué se fueron
+    - Reputación en el servidor
+    - Conflictos pasados
+    - Referencias de otros jugadores
+  </Card>
+</CardGrid>
+
+### Proceso de Reclutamiento
+
+**Fase 1: Identificación de candidatos**
+```bash
+# Observar jugadores potenciales
+/f list                      # Ver jugadores sin facción
+/f show <jugador>            # Investigar historia
+```
+
+**Métodos de identificación:**
+- **Observación en chat global** - Buscar actitudes positivas
+- **Recomendaciones de miembros** - Los mejores reclutas vienen por referencia
+- **Actividad en eventos** - Jugadores activos en actividades del servidor
+- **Refugees de facciones muertas** - Experiencia sin compromiso actual
+
+**Fase 2: Evaluación preliminar**
+
+**Entrevista básica:**
+```
+Preguntas clave:
+1. "¿Qué experiencia tienes con facciones?"
+2. "¿Por qué quieres unirte específicamente a nosotros?"
+3. "¿Cuánto tiempo juegas usualmente?"
+4. "¿Qué habilidades consideras que son tus puntos fuertes?"
+5. "¿Cómo manejas los conflictos con otros jugadores?"
+```
+
+**Red flags inmediatas:**
+- Respuestas vagas o evasivas
+- Historial de saltar entre facciones frecuentemente
+- Actitud demandante o entitled
+- No conoce nada sobre tu facción
+- Presión para ser promovido rápidamente
+
+**Fase 3: Período de prueba**
+
+```bash
+/f invite <candidato>        # Invitar como recluta
+```
+
+**Estructura del período de prueba (1-2 semanas):**
+- **Supervisión directa** por un moderador asignado
+- **Tareas específicas** para evaluar competencia
+- **Integración gradual** en actividades grupales
+- **Feedback constante** bidireccional
+
+### Técnicas de Reclutamiento Activo
+
+**Advertising inteligente:**
+```
+Chat global estratégico:
+"[Tu Facción] busca jugadores dedicados interesados 
+en [especialidad - PvP/construcción/comercio]. 
+Ofrecemos entrenamiento, recursos, y comunidad sólida. 
+Whisper para más información."
+```
+
+**Networking diplomático:**
+- Preguntar a aliados por recomendaciones
+- Reclutar de facciones que se disuelven
+- Identificar jugadores talentosos en facciones enemigas (para después de guerras)
+
+## Desarrollo de Liderazgo
+
+### Identificación de Potencial de Liderazgo
+
+**Señales de liderazgo natural:**
+- **Iniciativa propia** - Proponen proyectos y soluciones
+- **Comunicación efectiva** - Otros escuchan cuando hablan
+- **Resolución de problemas** - Manejan conflictos constructivamente
+- **Lealtad demostrada** - Priorizan grupo sobre interés personal
+- **Competencia técnica** - Dominan aspectos del juego
+
+### Sistema de Promociones
+
+**Criterios objetivos para promoción:**
+
+<Tabs>
+  <TabItem label="Recluta → Miembro">
+    
+**Requisitos mínimos:** 1-2 semanas sin incidentes, participación en 3+ actividades grupales, contribución regular de recursos, demostrar conocimiento básico de comandos, integración positiva con otros miembros.
+
+**Evaluación:** ¿Puede ser dejado solo sin supervisión? ¿Otros miembros lo aceptan? ¿Sigue reglas sin recordatorios?
+
+  </TabItem>
+  <TabItem label="Miembro → Moderador">
+    
+**Requisitos avanzados:** Al menos 1 mes como miembro, liderazgo en proyectos menores, ayuda activa a nuevos reclutas, participación en combate/defensas, propuestas constructivas para mejoras.
+
+**Evaluación:** ¿Otros lo respetan? ¿Puede manejar responsabilidad? ¿Mantiene secretos de facción?
+
+  </TabItem>
+  <TabItem label="Moderador → Coleader">
+    
+**Requisitos de élite:** Historial probado de gestión efectiva, lealtad absoluta demostrada, competencia en múltiples áreas, liderazgo en crisis, visión estratégica.
+
+**¡RECORDATORIO: Solo puede haber UN coleader!**
+
+  </TabItem>
+</Tabs>
+
+**Proceso de promoción:**
+```bash
+/f promote <jugador>         # Ascender un rango
+```
+
+**Comunicación de promoción:**
+```
+Anuncio público:
+"¡Felicitaciones a [Jugador] por su promoción a [Rango]! 
+Su [contribución específica] ha sido invaluable para 
+[Facción]. ¡Esperamos grandes cosas en su nuevo rol!"
+```
+
+### Entrenamiento de Liderazgo
+
+**Programa de desarrollo:**
+
+**Nuevos moderadores:**
+- **Mentoring con moderador senior** por 1 semana
+- **Responsabilidades graduales** empezando con tareas menores
+- **Feedback semanal** sobre desempeño
+- **Acceso gradual** a información sensible
+
+**Candidatos a coleader:**
+- **Proyectos de liderazgo independiente**
+- **Manejo de crisis simuladas**
+- **Entrenamiento en diplomacia**
+- **Gestión de conflictos reales bajo supervisión**
+
+## Manejo de Conflictos Internos
+
+### Tipos Comunes de Conflictos
+
+<CardGrid>
+  <Card title="💰 Recursos" icon="dollar-sign">
+    **Disputas sobre materiales**
+    
+    Quién puede usar qué recursos, distribución inequitativa, robo interno, acceso a bóvedas.
+  </Card>
+  
+  <Card title="🏗️ Construcción" icon="hammer">
+    **Proyectos y territorio**
+    
+    Dónde construir, estilos arquitectónicos, modificación de construcciones ajenas, uso de espacio.
+  </Card>
+  
+  <Card title="👥 Interpersonal" icon="users">
+    **Personalidades que chocan**
+    
+    Conflictos de ego, diferencias culturales, estilos de comunicación, competencia interna.
+  </Card>
+  
+  <Card title="📋 Autoridad" icon="clipboard">
+    **Cuestionamiento de liderazgo**
+    
+    Decisiones impopulares, promociones controvertidas, favoritismo percibido, abuso de poder.
+  </Card>
+</CardGrid>
+
+### Protocolos de Resolución
+
+**Escalación estructurada:**
+
+**Nivel 1: Autogestión**
+- Los involucrados resuelven directamente
+- Moderador disponible como mediador si se solicita
+- Timeframe: 24-48 horas
+
+**Nivel 2: Mediación de moderador**
+- Moderador facilita discusión estructurada
+- Enfoque en soluciones, no culpas
+- Acuerdo documentado
+- Timeframe: 2-3 días
+
+**Nivel 3: Decisión de liderazgo**
+- Coleader o admin toma decisión final
+- Puede incluir sanciones o cambios de política
+- Comunicación clara de la decisión y razones
+- Timeframe: 1-2 días
+
+**Nivel 4: Expulsión**
+- Último recurso para miembros disruptivos
+- Requiere consenso de liderazgo
+- Proceso formal con oportunidad de defensa
+
+### Técnicas de Mediación
+
+**Estructura de sesión de mediación:**
+
+```
+1. Establecer reglas básicas
+   - Respeto mutuo obligatorio
+   - Una persona habla a la vez
+   - Enfoque en comportamientos, no personalidades
+   - Objetivo de solución win-win
+
+2. Escuchar todas las perspectivas
+   - Cada parte explica su punto de vista
+   - Preguntas clarificadoras solamente
+   - Sin interrupciones o defensividad
+
+3. Identificar intereses comunes
+   - ¿Qué quieren ambos para la facción?
+   - ¿Dónde están de acuerdo?
+   - ¿Cuáles son los objetivos compartidos?
+
+4. Generar opciones
+   - Brainstorming de soluciones posibles
+   - Creatividad antes que evaluación
+   - Múltiples alternativas
+
+5. Acordar solución
+   - Compromisos específicos de cada parte
+   - Timeline claro para implementación
+   - Seguimiento programado
+```
+
+## Retención de Miembros
+
+### ¿Por Qué se van los Miembros?
+
+**Razones comunes de abandono:**
+
+<Tabs>
+  <TabItem label="😴 Aburrimiento">
+    
+**Síntomas:** Conectan menos frecuentemente, participación mínima en actividades, comentarios sobre "falta de acción", pérdida de entusiasmo en chat.
+
+**Soluciones:** Proyectos nuevos y emocionantes, roles especializados, competencias internas, exploración de nuevos plugins del servidor.
+
+  </TabItem>
+  <TabItem label="😤 Frustración">
+    
+**Síntomas:** Quejas frecuentes, cuestionamiento de decisiones, conflictos con otros miembros, críticas al liderazgo.
+
+**Soluciones:** Comunicación abierta sobre problemas, ajustes de política basados en feedback, roles que utilicen mejor sus fortalezas.
+
+  </TabItem>
+  <TabItem label="🎯 Ambición no satisfecha">
+    
+**Síntomas:** Presión por promociones, frustración con ritmo de avance, comparaciones con otros miembros, offers de otras facciones.
+
+**Soluciones:** Claridad en criterios de promoción, proyectos de liderazgo, reconocimiento público de contribuciones.
+
+  </TabItem>
+</Tabs>
+
+### Estrategias de Retención
+
+**Engagement continuo:**
+- **Proyectos rotativos** - Diferentes miembros lideran diferentes proyectos
+- **Especialización** - Roles únicos que aprovechan fortalezas individuales
+- **Reconocimiento público** - Celebrar contribuciones regularmente
+- **Crecimiento personal** - Oportunidades de aprender nuevas habilidades
+
+**Comunicación proactiva:**
+```bash
+# Check-ins regulares con miembros
+/msg <miembro> "¿Cómo estás disfrutando [actividad reciente]? 
+¿Hay algo en lo que te gustaría trabajar?"
+```
+
+### Señales de Alerta Temprana
+
+**Indicadores de riesgo de abandono:**
+- **Disminución súbita** en tiempo online
+- **Participación mínima** en actividades grupales
+- **Comunicación reducida** en chats de facción
+- **Excusas frecuentes** para no participar en eventos
+- **Preguntas sobre otras facciones**
+
+**Protocolo de intervención:**
+1. **Conversación privada** - Entender qué está pasando
+2. **Adjustes específicos** - Cambios basados en su feedback
+3. **Proyectos especiales** - Algo emocionante para re-engagement
+4. **Mentoring adicional** - Apoyo extra si es necesario
+
+## Cultura de Facción
+
+### Definiendo tu Cultura
+
+**Elementos fundamentales:**
+
+<CardGrid>
+  <Card title="🎯 Misión y Valores" icon="target">
+    **¿Por qué existe tu facción?**
+    
+    Define propósito claro: PvP dominance, construcción colaborativa, comercio, diplomacia, etc.
+  </Card>
+  
+  <Card title="📜 Reglas y Expectativas" icon="scroll">
+    **¿Cómo se comportan los miembros?**
+    
+    Código de conducta claro, expectativas de participación, protocolos de comunicación.
+  </Card>
+  
+  <Card title="🎉 Tradiciones y Rituales" icon="party-popper">
+    **¿Qué los hace únicos?**
+    
+    Eventos regulares, celebraciones especiales, tradiciones de bienvenida, ceremonias de promoción.
+  </Card>
+  
+  <Card title="🗣️ Comunicación" icon="message-circle">
+    **¿Cómo interactúan?**
+    
+    Tono formal vs casual, frecuencia esperada, canales de comunicación, protocolos de feedback.
+  </Card>
+</CardGrid>
+
+### Tipos de Cultura Faccionaria
+
+<Tabs>
+  <TabItem label="⚔️ Militar">
+    
+**Características:** Jerarquía estricta, disciplina, enfoque en PvP y conquista, comunicación formal, entrenamiento regular.
+
+**Ventajas:** Eficiencia en guerra, lealtad alta, decisiones rápidas, coordinación excelente.
+
+**Desventajas:** Puede ser rígida, menor creatividad, presión alta, no atrae a casual players.
+
+  </TabItem>
+  <TabItem label="🏗️ Colaborativa">
+    
+**Características:** Decisiones consensuadas, proyectos grupales, creatividad valorada, comunicación abierta, flexibilidad alta.
+
+**Ventajas:** Innovación, satisfacción alta de miembros, resolución creativa de problemas, inclusividad.
+
+**Desventajas:** Decisiones lentas, posible caos en crisis, dificultad para disciplina.
+
+  </TabItem>
+  <TabItem label="💼 Empresarial">
+    
+**Características:** Enfoque en eficiencia, especialización de roles, objetivos cuantificables, comunicación profesional.
+
+**Ventajas:** Crecimiento rápido, uso óptimo de recursos, atrae jugadores ambiciosos, resultados medibles.
+
+**Desventajas:** Puede sentirse impersonal, presión por performance, menos diversión.
+
+  </TabItem>
+  <TabItem label="👨‍👩‍👧‍👦 Familiar">
+    
+**Características:** Atmosphere relajada, apoyo mutuo, paciencia con nuevos, comunicación casual, lealtad personal.
+
+**Ventajas:** Retención alta, ambiente positivo, apoyo en dificultades, diversión prioritaria.
+
+**Desventajas:** Crecimiento lento, posible falta de ambición, dificultad para disciplina seria.
+
+  </TabItem>
+</Tabs>
+
+### Implementación de Cultura
+
+**Liderazgo por ejemplo:**
+- Los líderes modelan el comportamiento esperado
+- Consistencia entre palabras y acciones
+- Reconocimiento público de comportamientos culturales positivos
+- Corrección constructiva de desvíos culturales
+
+**Rituales y tradiciones:**
+```
+Ejemplos de tradiciones faccionarias:
+- "Viernes de construcción" - proyectos grupales semanales
+- "Lunes de guerra" - entrenamiento PvP organizado
+- "Ceremonia de promoción" - celebración formal de ascensos
+- "Tour del novato" - introducción estructurada para nuevos
+```
+
+## Comandos de Gestión
+
+### Administración de Miembros
+
+```bash
+# Invitación y reclutamiento
+/f invite <jugador>          # Invitar nuevo miembro
+/f deinvite <jugador>        # Cancelar invitación
+/f showinvites              # Ver invitaciones pendientes
+
+# Gestión de rangos
+/f promote <jugador>         # Ascender un rango
+/f mod <jugador>            # Alternar rango moderador
+/f coleader <jugador>       # Dar/quitar coleader (solo 1 permitido)
+/f admin <jugador>          # Transferir liderazgo (¡PELIGROSO!)
+
+# Disciplina
+/f kick <jugador>           # Expulsar miembro
+/f ban <jugador>            # Banear permanentemente
+/f unban <jugador>          # Quitar ban
+/f banlist                  # Ver lista de baneados
+
+# Información
+/f show                     # Ver todos los miembros y rangos
+/f status <jugador>         # Estado y última conexión
+```
+
+### Comunicación y Coordinación
+
+```bash
+# Comunicación interna
+/f chat f                   # Chat solo facción
+/f announce <mensaje>       # Anuncio a todos los miembros
+/f coords                   # Compartir ubicación
+
+# Gestión de territorio
+/f owner <jugador>          # Dar propiedad de chunk
+/f ownerlist               # Ver propietarios
+```
+
+## Métricas de Éxito
+
+### KPIs (Key Performance Indicators)
+
+**Métricas de crecimiento:**
+- **Retención de miembros** - % que permanece después de 30 días
+- **Tiempo de promoción** - Días promedio de recluta a miembro
+- **Actividad promedio** - Horas online por miembro por semana
+- **Satisfacción** - Feedback de miembros en evaluaciones
+
+**Métricas de salud organizacional:**
+- **Conflictos resueltos** vs **expulsiones forzosas**
+- **Participación en eventos** - % de miembros que participan
+- **Iniciativas de miembros** - Proyectos propuestos por no-líderes
+- **Tiempo de liderazgo en línea** - Disponibilidad de moderadores+
+
+### Evaluaciones Regulares
+
+**Revisión mensual de miembros:**
+```
+Template de evaluación:
+- Contribución a objetivos de facción: 1-10
+- Participación en actividades: 1-10  
+- Comunicación y teamwork: 1-10
+- Potencial de liderazgo: 1-10
+- Áreas de mejora: [texto libre]
+- Objetivos para próximo mes: [texto libre]
+```
+
+**Feedback de cultura:**
+```
+Preguntas anuales a todos los miembros:
+1. "¿Qué es lo que más disfrutas de [Facción]?"
+2. "¿Qué cambiarías si pudieras?"
+3. "¿Te sientes valorado por tus contribuciones?"
+4. "¿El liderazgo comunica efectivamente?"
+5. "¿Recomendarías [Facción] a un amigo?"
+```
+
+## Próximos Pasos
+
+Con un equipo bien gestionado, puedes avanzar a:
+
+<CardGrid>
+  <Card title="⚔️ Guerra y Combate" icon="swords">
+    Lidera tu equipo cohesionado hacia la victoria militar.
+    
+    [Ver Guerra →](/facciones/guerra)
+  </Card>
+  
+  <Card title="💰 Economía y Recursos" icon="bars">
+    Organiza tu equipo para dominancia económica.
+    
+    [Ver Economía →](/facciones/economia)
+  </Card>
+  
+  <Card title="🚀 Características Avanzadas" icon="puzzle">
+    Aprovecha funciones avanzadas con tu equipo experto.
+    
+    [Ver Avanzado →](/facciones/avanzado)
+  </Card>
+</CardGrid>
+
+---
+
+*"Una facción es solo tan fuerte como su miembro más débil, pero tan poderosa como su líder más sabio." - El verdadero poder viene de construir un equipo que funciona como una máquina bien aceitada.

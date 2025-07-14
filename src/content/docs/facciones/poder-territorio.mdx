@@ -1,0 +1,458 @@
+---
+title: Sistema de Poder y Territorio
+description: Domina las mecánicas de poder que controlan todo en facciones - reclamación, pérdida de territorio y estado raidable
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+
+# Sistema de Poder y Territorio
+
+El poder es **TODO** en facciones. Controla cuánta tierra puedes reclamar, si tu territorio puede ser robado, y tu capacidad de supervivencia. Esta sección te enseñará a dominar completamente este sistema crítico.
+
+## ¿Qué es el Poder?
+
+El poder es la **moneda fundamental** de las facciones. No es solo un número - es tu capacidad de existir y expandirte en el mundo.
+
+### Mecánicas Básicas del Poder
+
+<CardGrid>
+  <Card title="👤 Poder Individual" icon="user">
+    **Cada jugador tiene su propio poder:**
+    - Poder inicial: 10 puntos (típico)
+    - Poder máximo: 20-40 puntos (varía por servidor)
+    - Se regenera automáticamente con el tiempo
+    - Se pierde al morir
+  </Card>
+  
+  <Card title="🏛️ Poder de Facción" icon="home">
+    **El poder de tu facción es:**
+    - Suma total del poder de todos los miembros
+    - Determina cuánta tierra puedes reclamar
+    - Define si eres vulnerable a ataques
+    - Base de tu influencia en el servidor
+  </Card>
+  
+  <Card title="⚖️ Equilibrio Crítico" icon="scales">
+    **La fórmula del éxito:**
+    - Poder > Territorio = Seguro
+    - Poder = Territorio = Peligroso
+    - Poder < Territorio = ¡RAIDABLE!
+  </Card>
+</CardGrid>
+
+### Cálculos Exactos del Poder
+
+```bash
+# Ver tu poder personal
+/f power                     # Tu poder actual/máximo
+
+# Ver poder de facción
+/f show                      # Poder total y distribución
+
+# Fórmula fundamental:
+Territorio Máximo = Poder de Facción ÷ Costo por Chunk
+```
+
+**Ejemplo práctico:**
+- Facción con 5 miembros × 20 poder = 100 poder total
+- Costo por chunk = 1 poder
+- Territorio máximo seguro = 100 chunks
+- **Regla de seguridad:** Mantener máximo 80 chunks (80% del poder)
+
+## Mecánicas de Pérdida y Recuperación
+
+### Pérdida de Poder
+
+<Tabs>
+  <TabItem label="💀 Por Muerte">
+    
+**Pérdida típica por muerte:** 2-4 puntos de poder
+
+**Factores que afectan la pérdida:**
+**Ubicación de muerte:** Territorio enemigo = pérdida máxima, territorio propio = pérdida reducida, zona segura = sin pérdida (usualmente), zona de guerra = pérdida normal o aumentada.
+
+**Causa de muerte:** PvP = pérdida completa, mobs = pérdida reducida, accidentes = pérdida normal, suicidio = pérdida completa.
+
+**Configuración del servidor:** Algunos servidores tienen modificadores especiales.
+
+  </TabItem>
+  <TabItem label="⏰ Recuperación">
+    
+**Regeneración automática:** +1 poder cada 5-10 minutos online
+
+**Factores que aceleran recuperación:**
+**Tiempo online:** Solo se regenera mientras juegas activamente, **territorio propio:** Algunas configuraciones dan bonificación, **actividades específicas:** Algunos servidores premian ciertas acciones.
+
+**Tiempo total de recuperación:**
+De 0 a poder máximo = 3-6 horas online aproximadamente.
+
+  </TabItem>
+</Tabs>
+
+:::danger[Crisis de Poder]
+**Si tu facción pierde mucho poder rápidamente:**
+1. **Deja de morir inmediatamente** - cada muerte empeora la situación
+2. **Libera territorio no crítico** con `/f unclaim`
+3. **Mantente online** para regenerar poder
+4. **Busca tregua temporal** si estás bajo ataque
+:::
+
+## Estado Raidable: La Pesadilla de Facciones
+
+### ¿Qué Significa Ser "Raidable"?
+
+**Raidable = Poder de facción < Tierra reclamada**
+
+Cuando esto ocurre, **cualquier facción enemiga puede robar tu territorio** usando "overclaiming".
+
+### Señales de Alarma
+
+```bash
+/f show                      # Verifica estos números críticos
+```
+
+**Indicadores de peligro:**
+- **Relación Poder/Territorio:** Si es menor a 1.2, estás en riesgo
+- **Miembros con poder negativo:** Miembros que han muerto mucho
+- **Tendencia de pérdidas:** Si has perdido poder 3 días seguidos
+- **Guerras activas:** Conflictos que causan muertes frecuentes
+
+### Protocolo Anti-Raidable
+
+**Si te estás acercando al estado raidable:**
+
+```bash
+# 1. Evaluación inmediata
+/f show                      # Ver números exactos
+/f power                     # Tu contribución personal
+
+# 2. Liberación de territorio no crítico
+/f unclaim                   # En chunks menos importantes
+/f map                       # Identificar territorio prescindible
+
+# 3. Protección de recursos críticos
+/f vault 1                   # Mover objetos valiosos a bóvedas
+```
+
+**Estrategia de recuperación:**
+1. **Prioridad absoluta:** Evitar más muertes
+2. **Liberar territorio** hasta tener margen de seguridad
+3. **Tiempo online masivo** para regenerar poder
+4. **Reclutamiento urgente** de miembros activos
+5. **Diplomacia defensiva** - buscar aliados o treguas
+
+## Reclamación de Territorio
+
+### Estrategias de Expansión
+
+<CardGrid>
+  <Card title="🎯 Expansión Concéntrica" icon="target">
+    **Mejor para:** Facciones defensivas y nuevas
+    
+    Reclama en cuadrados alrededor de tu base central. Crea defensas sólidas y facilita la protección.
+    
+    ```bash
+    /f claim                 # Chunk por chunk
+    /f claimfill 3           # Llenar huecos
+    ```
+  </Card>
+  
+  <Card title="🚂 Expansión Linear" icon="map">
+    **Mejor para:** Conectar recursos importantes
+    
+    Crea "carreteras" protegidas entre puntos clave como base, mina, granja.
+    
+    ```bash
+    /f claimline norte 10    # Línea hacia recurso
+    /f autoclaim             # Reclamar mientras caminas
+    ```
+  </Card>
+  
+  <Card title="🎯 Expansión Estratégica" icon="star">
+    **Mejor para:** Facciones experimentadas
+    
+    Reclama recursos específicos, puntos defensivos, o bloquea expansión enemiga.
+    
+    ```bash
+    /f claim 2               # Radio específico
+    /f map                   # Evaluar impacto
+    ```
+  </Card>
+</CardGrid>
+
+### Comandos de Reclamación
+
+**Reclamación básica:**
+```bash
+/f claim                     # Chunk donde estás parado
+/f claim 3                   # Radio de 3 chunks alrededor tuyo
+/f claimline este 5          # 5 chunks hacia el este
+/f claimfill 4               # Llenar huecos hasta 4 chunks
+```
+
+**Reclamación automática:**
+```bash
+/f autoclaim                 # Activar reclamo automático
+# Ahora cada chunk que pises se reclama automáticamente
+/f autoclaim                 # Desactivar (importante!)
+```
+
+**Gestión de territorio:**
+```bash
+/f unclaim                   # Liberar chunk actual
+/f unclaimall                # Liberar TODO (¡PELIGROSO!)
+/f listclaims                # Ver todos tus chunks reclamados
+```
+
+### Reglas de Reclamación
+
+**Restricciones comunes:**
+- **Contigüidad:** Solo puedes reclamar chunks conectados a tu territorio
+- **Distancia mínima:** Buffer requerido entre facciones
+- **Límites por facción:** Máximo de chunks totales permitidos
+- **Zonas protegidas:** No puedes reclamar cerca del spawn
+
+**Costos y requisitos:**
+- **Poder suficiente:** Debes tener poder > territorio después del reclamo
+- **Miembros mínimos:** Algunas configuraciones requieren X miembros para Y territorio
+- **Dinero:** Algunos servidores cobran por reclamar
+
+## Overclaiming: El Arte del Robo Territorial
+
+### ¿Cómo Funciona el Overclaiming?
+
+**Overclaiming** = Robar territorio de una facción enemiga raidable
+
+**Requisitos para overclaiming:**
+1. **Ser enemigos declarados** de la facción objetivo
+2. **Facción objetivo debe estar raidable** (poder < territorio)
+3. **Estar parado en su territorio** que quieres robar
+4. **Tener poder suficiente** para el nuevo chunk
+
+### Proceso de Overclaiming
+
+```bash
+# 1. Verificar que son raidables
+/f show <enemigo>            # Su poder vs territorio
+
+# 2. Posicionarte en su territorio
+/f map                       # Confirmar que estás en su chunk
+
+# 3. Robar el territorio
+/f claim                     # ¡Ahora es tuyo!
+```
+
+### Estrategia de Asalto Territorial
+
+**Preparación:**
+1. **Debilitar al enemigo** - causar muertes para reducir su poder
+2. **Monitoreo constante** - verificar cuando se vuelven raidables
+3. **Planificación de objetivos** - ¿qué chunks robar primero?
+
+**Prioridades en overclaiming:**
+1. **Su base principal** - acceso a recursos y bóvedas
+2. **Recursos valiosos** - minas, granjas, spawners
+3. **Puntos estratégicos** - ubicaciones defensivas
+4. **Fragmentar territorio** - dividir su imperio
+
+**Después del overclaim:**
+```bash
+/f sethome                   # Si robaste algo mejor que tu base actual
+/f vault 1                   # Saquear sus recursos
+/f owner <tu_usuario>        # Proteger el nuevo territorio
+```
+
+## Defensa Territorial
+
+### Diseño Defensivo
+
+**Principios de defensa territorial:**
+
+<Tabs>
+  <TabItem label="🏰 Base Central Fortificada">
+    
+**Concepto:** Base principal en el centro, defensas en capas concéntricas.
+
+**Ventajas:** Máxima protección del núcleo, fácil de defender, comunicación interna rápida.
+
+**Implementación:** Centro = bóvedas y recursos críticos, primera capa = viviendas y talleres, segunda capa = granjas y almacenes, perímetro = defensas y trampas.
+
+  </TabItem>
+  <TabItem label="🎯 Bases Distribuidas">
+    
+**Concepto:** Múltiples bases importantes distribuidas geográficamente.
+
+**Ventajas:** Difícil destruir completamente, flexibilidad operacional, control de más territorio.
+
+**Implementación:** Base principal + 2-3 bases secundarias, recursos distribuidos entre todas, sistema de warps conectando bases.
+
+  </TabItem>
+  <TabItem label="🕳️ Base Subterránea">
+    
+**Concepto:** Base principal completamente oculta bajo tierra.
+
+**Ventajas:** Invisibilidad total, protección contra cañones TNT, elemento sorpresa.
+
+**Implementación:** Entrada secreta lejos de la base, múltiples niveles de profundidad, salidas de emergencia en chunks diferentes.
+
+  </TabItem>
+</Tabs>
+
+### Gestión de Propietarios
+
+```bash
+/f owner <jugador>           # Dar propiedad exclusiva del chunk
+/f owner                     # Quitar todos los propietarios
+/f ownerlist                 # Ver propietarios actuales
+```
+
+**Estrategia de propietarios:**
+- **Chunks críticos:** Solo admin y coleader como propietarios
+- **Área de construcción:** Propietarios específicos del proyecto
+- **Defensas:** Solo miembros militares de confianza
+- **Recursos:** Propietarios rotativos para auditoría
+
+### Sistema de Alertas
+
+**Monitoreo de territorio:**
+```bash
+/f map auto                  # Actualización automática
+/f coords                    # Compartir ubicación si hay intrusos
+/f chat f                    # Comunicación inmediata de amenazas
+```
+
+**Protocolos de alerta:**
+1. **Intruso detectado:** Comunicar ubicación inmediatamente
+2. **Ataque coordinado:** Llamar a todos los miembros online
+3. **Overclaiming en progreso:** Contraataque inmediato o evacuación
+4. **Base comprometida:** Activar planes de contingencia
+
+## Estrategias Avanzadas de Poder
+
+### Gestión de Miembros para Máximo Poder
+
+**Optimización de roster:**
+- **Miembros activos:** Mejor tener 10 activos que 20 inactivos
+- **Distribución de riesgo:** No todos los miembros poderosos en misión peligrosa
+- **Rotación de actividades:** Miembros en riesgo alternan con seguros
+- **Mentoring de poder:** Veteranos enseñan supervivencia a novatos
+
+### Tácticas de Preservación
+
+**"Banking" de poder:**
+- Mantener algunos miembros siempre en territorio seguro
+- Rotar quién participa en actividades de riesgo
+- Tener "reservas de poder" que raramente salen de la base
+
+**Recuperación acelerada:**
+- Organizar turnos de presencia online 24/7
+- Actividades grupales que mantengan a todos online
+- Eventos internos durante períodos de recuperación
+
+### Manipulación del Poder Enemigo
+
+**Estrategias ofensivas:**
+- **Guerra de desgaste:** Ataques constantes para drenar su poder
+- **Caza selectiva:** Targeting de miembros con más poder
+- **Trampas psicológicas:** Provocar a enemigos para que ataquen imprudentemente
+
+## Calculadora de Supervivencia
+
+### Fórmulas Críticas
+
+**Poder mínimo seguro:**
+```
+Poder requerido = (Territorio actual × 1.5) + 10
+```
+
+**Capacidad de expansión:**
+```
+Chunks adicionales seguros = (Poder actual - Territorio actual) ÷ 1.5
+```
+
+**Tiempo de recuperación:**
+```
+Horas para recuperar = (Poder perdido ÷ Regeneración por hora)
+Regeneración típica = 6-12 poder por hora online
+```
+
+### Evaluación de Riesgo
+
+**Verde (Seguro):** Poder > Territorio × 1.5
+- Puedes expandir moderadamente
+- Resistente a ataques menores
+- Enfócate en crecimiento
+
+**Amarillo (Precaución):** Poder entre Territorio × 1.2 y 1.5
+- Expansión limitada únicamente
+- Evitar conflictos innecesarios
+- Monitoreo constante requerido
+
+**Rojo (Peligro):** Poder < Territorio × 1.2
+- **NO EXPANDIR** bajo ninguna circunstancia
+- Liberar territorio no crítico inmediatamente
+- Enfoque total en supervivencia
+
+**Negro (Crisis):** Poder < Territorio
+- **ESTADO RAIDABLE** - acción inmediata requerida
+- Protocolo de emergencia activado
+- Considerar disolución controlada si no se puede recuperar
+
+## Herramientas de Monitoreo
+
+### Comandos de Diagnóstico
+
+```bash
+# Análisis completo de poder
+/f show                      # Estado general de facción
+/f power                     # Tu poder personal
+/f list                      # Ver todas las facciones y su poder
+/f top power                 # Rankings de poder del servidor
+
+# Análisis territorial
+/f map                       # Territorio circundante
+/f listclaims                # Inventario completo de tu territorio
+/f claimfill 0               # Ver chunks que podrías reclamar
+```
+
+### Auditoría Regular
+
+**Checklist semanal:**
+- [ ] Verificar relación poder/territorio de tu facción
+- [ ] Revisar poder individual de cada miembro
+- [ ] Identificar miembros con poder consistentemente bajo
+- [ ] Evaluar territorio: ¿todo chunk es realmente necesario?
+- [ ] Monitorear facciones enemigas para oportunidades de overclaim
+- [ ] Planificar expansión basada en poder disponible
+
+:::tip[Regla de Oro del Poder]
+**"Mejor tener territorio que puedas defender que territorio que te pueda ser robado"** - Siempre mantén un buffer de poder del 20-50% sobre tu territorio.
+:::
+
+## Próximos Pasos
+
+Ahora que dominas el sistema de poder y territorio, puedes avanzar a:
+
+<CardGrid>
+  <Card title="🤝 Relaciones y Diplomacia" icon="heart">
+    Aprende a formar alianzas y manejar enemigos estratégicamente.
+    
+    [Ver Diplomacia →](/facciones/diplomacia)
+  </Card>
+  
+  <Card title="⚔️ Guerra y Combate" icon="swords">
+    Usa tu conocimiento de poder para dominar en conflictos.
+    
+    [Ver Guerra →](/facciones/guerra)
+  </Card>
+  
+  <Card title="👥 Gestión de Miembros" icon="group">
+    Optimiza tu facción para máximo poder y eficiencia.
+    
+    [Ver Gestión →](/facciones/gestion-miembros)
+  </Card>
+</CardGrid>
+
+---
+
+*El poder es vida en facciones. Quien controla el poder, controla el territorio. Quien controla el territorio, controla el servidor.*

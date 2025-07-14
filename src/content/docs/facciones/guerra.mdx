@@ -1,0 +1,683 @@
+---
+title: Guerra y Combate
+description: Estrategias militares desde declaraciones de guerra hasta tácticas de asedio, overclaiming y defensa territorial
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+
+# Guerra y Combate
+
+La guerra en facciones no es solo PvP - es **estrategia total**. Combina inteligencia militar, logística, psicología y timing perfecto. Esta sección te convertirá de guerrero amateur a general maestro, capaz de planificar y ejecutar campañas que redefinan el mapa del servidor.
+
+## Filosofía de Guerra en Facciones
+
+### Guerra vs PvP Simple
+
+**PvP tradicional:** Encuentros aleatorios, skill individual, consequences mínimas.
+
+**Guerra de facciones:** **Conflicto total** donde cada muerte tiene consecuencias estratégicas, cada territorio perdido cambia el equilibrio de poder, y cada decisión afecta a docenas de jugadores.
+
+### Los Tres Pilares de la Victoria
+
+<CardGrid>
+  <Card title="🧠 Inteligencia" icon="brain">
+    **Información es poder**
+    
+    Conocer enemy numbers, recursos, defensas, alianzas, y timing de actividad.
+  </Card>
+  
+  <Card title="📦 Logística" icon="package">
+    **Recursos ganan guerras**
+    
+    Suministros, gear, comida, pociones, TNT, y capacidad de reposición.
+  </Card>
+  
+  <Card title="⚡ Timing" icon="zap">
+    **Momento perfecto**
+    
+    Cuándo atacar, cuándo defenderse, cuándo negociar, y cuándo retirarse.
+  </Card>
+</CardGrid>
+
+## Preparación Pre-Guerra
+
+### Análisis de Inteligencia
+
+**Antes de declarar guerra, CONOCE a tu enemigo:**
+
+```bash
+# Recopilación de inteligencia básica
+/f show <objetivo>           # Poder, territorio, miembros
+/f map                       # Distribución territorial
+/f list                      # Posición relativa en servidor
+```
+
+**Intel checklist crítico:**
+
+<Tabs>
+  <TabItem label="👥 Personal">
+    
+**Miembros activos:** ¿Cuántos están online en horarios diferentes? **Skill level:** ¿Quiénes son sus mejores PvPers? **Liderazgo:** ¿Quién toma decisiones? ¿Están online frecuentemente? **Nuevos/veteranos:** Ratio de experiencia en la facción.
+
+  </TabItem>
+  <TabItem label="💪 Poder Militar">
+    
+**Relación poder/territorio:** ¿Están cerca de ser raidables? **Historial de guerras:** ¿Cómo se desempeñan en conflictos? **Gear y recursos:** Calidad de equipment observado. **Aliados militares:** ¿Quién los ayudaría en guerra?
+
+  </TabItem>
+  <TabItem label="🏰 Defensas">
+    
+**Diseño de base:** ¿Subterránea, aérea, distribuida? **Accesos:** ¿Cuántas entradas/salidas? **Trampas:** ¿Qué defensas automatizadas tienen? **Bóvedas:** ¿Dónde están sus recursos más valiosos?
+
+  </TabItem>
+  <TabItem label="📅 Patrones">
+    
+**Horarios de actividad:** ¿Cuándo están más/menos activos? **Rutinas:** ¿Dónde van regularmente para recursos? **Eventos:** ¿Participan en actividades del servidor? **Comportamiento en crisis:** ¿Cómo reaccionan bajo presión?
+
+  </TabItem>
+</Tabs>
+
+### Preparación Logística
+
+**Arsenales de guerra:**
+
+**Equipment personal (por combatiente):**
+- **Armor sets:** Mínimo 3 sets completos por persona
+- **Armas:** Espadas, arcos, flechas (stacks múltiples)
+- **Consumibles:** Golden apples, potions, comida
+- **Utilidades:** Ender pearls, TNT, bloques de construcción
+
+**Suministros de facción:**
+```bash
+# Almacenamiento en bóvedas
+/f vault 1                   # Gear de guerra
+/f vault 2                   # Consumibles y potions
+/f tnt deposit 128           # TNT para asedios
+```
+
+**Cadena de suministros:**
+- **Granjas automatizadas** para comida constante
+- **Sistema de brewing** para potions
+- **Fuentes de XP** para enchanting continuo
+- **Mining operations** para materials de gear
+
+### Preparación Táctica
+
+**Entrenamiento de equipo:**
+
+<CardGrid>
+  <Card title="⚔️ PvP Individual" icon="sword">
+    **Skill personal de cada miembro**
+    
+    Practice en arenas, combos, timing de potions, uso de terrain.
+  </Card>
+  
+  <Card title="👥 Teamfight" icon="users">
+    **Coordinación grupal**
+    
+    Focus fire, comunicación en combate, formaciones, support roles.
+  </Card>
+  
+  <Card title="🏰 Asedio" icon="castle">
+    **Tácticas de base**
+    
+    Breach techniques, clearing buildings, securing objectives.
+  </Card>
+  
+  <Card title="🛡️ Defensa" icon="shield">
+    **Protección territorial**
+    
+    Fallback positions, communication lines, emergency procedures.
+  </Card>
+</CardGrid>
+
+**Roles especializados:**
+- **Tank:** Absorbe damage, lidera charges
+- **DPS:** Maximum damage output, target elimination
+- **Support:** Healing, buffs, logística en combate
+- **Scout:** Intelligence, fast movement, communication
+- **Engineer:** TNT cannons, trap disabling, breach creation
+
+## Declaración y Inicio de Guerra
+
+### El Momento de la Declaración
+
+**Timing óptimo para declarar guerra:**
+- **Ellos están débiles:** Poder bajo, miembros inactivos, conflictos internos
+- **Tú estás fuerte:** Poder alto, equipo cohesionado, recursos abundantes
+- **Oportunidad estratégica:** Aliados disponibles, enemies occupied elsewhere
+- **Objective clear:** Sabes exactamente qué quieres conseguir
+
+**Timing MALO:**
+- **Impulso emocional** - Decisión reactiva sin plan
+- **Tú estás débil** - Recursos limitados o conflictos internos
+- **Multiple fronts** - Ya tienes otros conflictos activos
+- **Uncertainty** - No tienes objective claro
+
+### Protocolo de Declaración
+
+```bash
+/f enemy <facción>           # Point of no return
+```
+
+**Comunicación de guerra:**
+
+**Interna (a tu facción):**
+```
+[ANUNCIO DE GUERRA]
+Efectivo inmediatamente, [Facción] está en estado 
+de guerra con [Enemigo].
+
+OBJETIVOS:
+- [Objetivo específico - territorio, recursos, eliminación]
+
+REGLAS DE ENGAGEMENT:
+- Todos los miembros de [Enemigo] son targets válidos
+- Prioridad en [objetivos específicos]
+- Reportar avistamientos inmediatamente
+- Gear de guerra obligatorio fuera de base
+
+COORDINACIÓN:
+- Comandante de guerra: [Jugador]
+- Comunicación: Chat de facción únicamente
+- Reunión de estrategia: [Tiempo] en [Ubicación]
+```
+
+**Externa (al enemigo):**
+```
+[Mensaje diplomático final]
+"[Facción] declara formalmente estado de guerra 
+con [Enemigo] debido a [razón específica]. 
+Esto es efectivo inmediatamente."
+```
+
+**Pública (chat global - opcional):**
+```
+"[Facción] y [Enemigo] están ahora en estado de guerra. 
+Neutral parties son aconsejadas a mantenerse alejadas 
+del territorio en disputa."
+```
+
+## Estrategias de Guerra
+
+### Guerra de Desgaste
+
+**Objetivo:** Drenar el poder enemigo gradualmente hasta que sean raidables.
+
+**Tácticas específicas:**
+
+<Tabs>
+  <TabItem label="🎯 Hit-and-Run">
+    
+**Método:** Ataques rápidos, kills individuales, escape inmediato.
+
+**Ejecución:** Scouts identifican targets aislados, strike team pequeño (2-3) ataca, escape usando ender pearls o territory knowledge, repetir cada 30-60 minutos.
+
+**Ventajas:** Low risk, consistent power drain, psychological pressure.
+
+  </TabItem>
+  <TabItem label="🚧 Resource Denial">
+    
+**Método:** Interferir con sus operaciones de mining, farming, building.
+
+**Ejecución:** Camp sus rutas de mining, interrupt building projects, kill during resource gathering, block access to key areas.
+
+**Ventajas:** Weakens their logistics, forces defensive posture, limits their growth.
+
+  </TabItem>
+  <TabItem label="🧠 Psychological Warfare">
+    
+**Método:** Create stress, uncertainty, y internal conflict.
+
+**Ejecución:** Constant presence near their territory, unpredictable attack timing, target their leaders specifically, propaganda in global chat.
+
+**Ventajas:** May cause internal problems, reduces their effectiveness, potential desertion.
+
+  </TabItem>
+</Tabs>
+
+### Guerra de Conquista
+
+**Objetivo:** Capturar territorio específico o eliminar la facción completamente.
+
+**Fases de conquista:**
+
+**Fase 1: Debilitamiento (1-3 días)**
+- Reducir su poder através de kills
+- Destroy external infrastructure
+- Cut off supply lines
+- Isolate diplomatically
+
+**Fase 2: Asedio (1-7 días)**
+- Surround key territory
+- Constant pressure on main base
+- Prevent rebuilding/resupply
+- Wait for raidable status
+
+**Fase 3: Overclaiming (1 día)**
+- Immediate territory seizure when raidable
+- Secure valuable chunks first
+- Establish control quickly
+- Prevent recapture
+
+### Guerra de Alianzas
+
+**Objetivo:** Coordinar con aliados para overwhelming force.
+
+**Coordinación inter-facción:**
+
+```bash
+/f chat a                    # Comunicación aliada
+```
+
+**Estructura de comando conjunta:**
+- **Comandante supremo:** Líder de facción más grande/experimentada
+- **Comandantes de facción:** Cada líder mantiene control de sus miembros
+- **Especialización:** Cada facción aporta fortalezas específicas
+- **Resource sharing:** Distribución de costos y botín
+
+**Tácticas coordinadas:**
+- **Multi-front assault:** Ataques simultáneos desde múltiples direcciones
+- **Resource combination:** Pool de supplies para sustained campaign
+- **Intel sharing:** Information network más amplia
+- **Diplomatic pressure:** Isolation completa del enemy
+
+## Tácticas de Asedio
+
+### Tipos de Asedio
+
+<CardGrid>
+  <Card title="🏰 Asedio Directo" icon="crosshair">
+    **Ataque frontal a la base principal**
+    
+    Overwhelming force, breach defenses, secure core territory quickly.
+  </Card>
+  
+  <Card title="🕳️ Asedio de Túnel" icon="shovel">
+    **Underground approach**
+    
+    Dig tunnels beneath defenses, surprise attacks from below.
+  </Card>
+  
+  <Card title="🌊 Asedio Total" icon="waves">
+    **Complete containment**
+    
+    Surround completely, wait for surrender o internal collapse.
+  </Card>
+  
+  <Card title="⚡ Asedio Relámpago" icon="zap">
+    **Fast overwhelming strike**
+    
+    Maximum force in minimum time, secure objectives before defense organizes.
+  </Card>
+</CardGrid>
+
+### Preparación de Asedio
+
+**Intelligence gathering específica:**
+```bash
+# Reconnaissance detallada
+/f map                       # Layout exacto del territorio
+```
+
+**Información crítica needed:**
+- **Entry points:** Todas las posibles entradas
+- **Internal layout:** Distribución de rooms y resources
+- **Escape routes:** Cómo pueden evacuar o counter-attack
+- **Trap locations:** Defensas automatizadas o manual
+- **Valuable targets:** Bóvedas, spawners, storage rooms
+
+**Engineering preparation:**
+- **TNT cannons:** Para breach de walls o clearing areas
+- **Bridge materials:** Para crossing moats o gaps
+- **Digging tools:** Efficiency picks para tunnel warfare
+- **Counter-trap supplies:** Materials para disable enemy defenses
+
+### Ejecución de Asedio
+
+**Comando y control:**
+```
+Estructura de comunicación durante asedio:
+- Comandante general: Strategic decisions
+- Team leaders: Tactical execution
+- Scouts: Real-time intelligence
+- Support: Logistics y medical
+```
+
+**Fases de asedio:**
+
+**Fase 1: Positioning (15-30 min)**
+- Establish perimeter around target
+- Set up supply lines to besieged area
+- Deploy scouts para continuous intel
+- Final equipment check
+
+**Fase 2: Breaching (5-20 min)**
+- Execute breach plan (TNT, tunnels, etc.)
+- Suppress defender response
+- Establish foothold inside defenses
+- Secure entry point
+
+**Fase 3: Clearing (10-45 min)**
+- Systematic clearing of internal areas
+- Neutralize defenders y traps
+- Secure valuable objectives
+- Establish internal control
+
+**Fase 4: Consolidation (5-15 min)**
+- Count loot y evaluate gains
+- Establish defenses on new territory
+- Plan for potential counter-attack
+- Distribute rewards y evaluate performance
+
+## Overclaiming: El Arte de la Conquista
+
+### Mecánicas de Overclaiming
+
+**Requisitos absolutos:**
+1. **Enemy status:** Deben estar raidables (poder < territorio)
+2. **War declaration:** Deben ser enemies declarados
+3. **Physical presence:** Estar standing en su territory
+4. **Power available:** Tener poder suficiente para el new chunk
+
+```bash
+# Proceso de overclaiming
+/f show <enemy>              # Verify raidable status
+/f map                       # Confirm you're in their territory  
+/f claim                     # Steal the chunk!
+```
+
+### Estrategia de Overclaiming
+
+**Priorización de targets:**
+
+<Tabs>
+  <TabItem label="🏆 Objetivos de Alto Valor">
+    
+**Priority 1:** Su base principal con bóvedas y resources, **Priority 2:** Spawners o infinite resource sources, **Priority 3:** Strategic defensive positions, **Priority 4:** Connecting territory para fragment their holdings.
+
+  </TabItem>
+  <TabItem label="⚡ Speed of Execution">
+    
+**Timing crítico:** Raidable status puede cambiar rápidamente, **Coordination:** Multiple players claiming simultaneously, **Communication:** Real-time updates sobre su poder status, **Backup plans:** Alternative targets if primary is contested.
+
+  </TabItem>
+  <TabItem label="🛡️ Securing Gains">
+    
+**Immediate defense:** Establecer control del new territory, **Resource extraction:** Quick looting antes de potential recapture, **Fortification:** Temporary defenses while consolidating, **Legal protection:** Ensure el claim es permanent y defendible.
+
+  </TabItem>
+</Tabs>
+
+### Post-Overclaim Operations
+
+**Securing conquered territory:**
+```bash
+/f sethome                   # If you captured something better
+/f owner <trusted_member>    # Secure ownership
+/f vault 1                   # Extract valuable resources immediately
+```
+
+**Exploitation de captured assets:**
+- **Resource extraction:** Immediate looting de storage systems
+- **Intelligence gathering:** Access a internal communications y plans
+- **Strategic advantage:** Use new position para further operations
+- **Psychological impact:** Demonstrate poder y inevitability of defeat
+
+## Defensa Territorial
+
+### Diseño Defensivo
+
+**Principios de fortificación:**
+
+<CardGrid>
+  <Card title="🎯 Defense in Depth" icon="target">
+    **Múltiples layers de defensa**
+    
+    Perimeter defenses, intermediate positions, core citadel, escape routes.
+  </Card>
+  
+  <Card title="🕳️ Concealment" icon="eye-off">
+    **Hide valuable assets**
+    
+    Underground bases, disguised entrances, distributed resources.
+  </Card>
+  
+  <Card title="⚡ Rapid Response" icon="zap">
+    **Quick reaction capability**
+    
+    Fast travel systems, communication networks, pre-positioned supplies.
+  </Card>
+  
+  <Card title="🔄 Redundancy" icon="refresh-cw">
+    **Multiple backup systems**
+    
+    Alternative bases, distributed storage, multiple escape routes.
+  </Card>
+</CardGrid>
+
+### Tipos de Defensas
+
+<Tabs>
+  <TabItem label="🏰 Fortificaciones Físicas">
+    
+**Walls y barriers:** High walls con difficult scaling, water moats o lava, maze-like entrances, multiple gate systems.
+
+**Trampas automatizadas:** Pressure plate activations, dispenser systems, falling traps, maze confusion systems.
+
+  </TabItem>
+  <TabItem label="👁️ Intelligence Network">
+    
+**Early warning systems:** Scouts en territory borders, communication networks, allied intelligence sharing, automated detection systems.
+
+**Counter-intelligence:** Misinformation campaigns, fake defensive positions, concealed true defenses, security protocols.
+
+  </TabItem>
+  <TabItem label="🚨 Response Protocols">
+    
+**Alert systems:** Immediate communication of threats, predetermined assembly points, role assignments during defense, supply distribution systems.
+
+**Escalation procedures:** Different responses para different threat levels, coordination with allies, evacuation procedures, scorched earth protocols.
+
+  </TabItem>
+</Tabs>
+
+### Defensa Activa
+
+**Protocolo de respuesta a invasión:**
+
+```bash
+# Immediate response commands
+/f home                      # Rally point for defenders
+/f chat f                    # Coordinate defense
+/f coords                    # Share positions
+```
+
+**Roles defensivos:**
+- **Defenders:** Direct combat con invaders
+- **Engineers:** Repair defenses, operate traps
+- **Medics:** Support y healing
+- **Intelligence:** Track enemy movements y numbers
+- **Command:** Coordinate overall response
+
+**Tactical considerations:**
+- **Know your terrain:** Use home field advantage
+- **Conserve resources:** Don't waste valuable gear unnecessarily
+- **Communication:** Constant updates sobre enemy position y numbers
+- **Flexibility:** Adapt tactics based on enemy strategy
+- **Preservation:** Sometimes retreat es better than total loss
+
+## Guerra Psicológica
+
+### Principios de Guerra Mental
+
+**El battlefield está en la mente antes que en el juego.**
+
+**Objetivos psicológicos:**
+- **Reduce enemy morale** y confidence
+- **Create internal conflict** y doubt
+- **Establish reputation** de invincibility
+- **Demoralize** through consistent pressure
+
+### Tácticas Psicológicas
+
+<CardGrid>
+  <Card title="👁️ Presence" icon="eye">
+    **Constant visibility**
+    
+    Always be seen near enemy territory, unpredictable patrols, sudden appearances.
+  </Card>
+  
+  <Card title="💬 Propaganda" icon="message-circle">
+    **Information warfare**
+    
+    Global chat messaging, recruitment of their members, spreading doubt.
+  </Card>
+  
+  <Card title="🎯 Targeting" icon="crosshairs">
+    **Selective pressure**
+    
+    Focus on key individuals, target leaders specifically, create paranoia.
+  </Card>
+  
+  <Card title="⏰ Timing" icon="clock">
+    **Psychological timing**
+    
+    Attack when they're weakest mentally, exploit internal conflicts.
+  </Card>
+</CardGrid>
+
+### Construcción de Reputación
+
+**Reputation es tu arma más poderosa:**
+
+**Elementos de reputación intimidante:**
+- **Consistent victories** en previous conflicts
+- **Ruthless efficiency** en operations
+- **Professional competence** en all military activities
+- **Honorable conduct** para mantener respect
+
+**Messaging strategy:**
+```
+Public communications should project:
+- Confidence (never desperate)
+- Competence (well-planned operations)  
+- Inevitability (victory is certain)
+- Reasonableness (open to surrender terms)
+```
+
+## Terminación de Guerra
+
+### Condiciones de Victoria
+
+**Victory conditions posibles:**
+
+<Tabs>
+  <TabItem label="🏆 Total Victory">
+    
+**Enemy faction dissolves** o abandona servidor, **Complete territorial control** de disputed areas, **Resource acquisition** de all enemy assets, **Elimination** de enemy capability para future threat.
+
+  </TabItem>
+  <TabItem label="🎯 Objective Victory">
+    
+**Specific territorial gains** achieved, **Resource objectives** secured, **Strategic position** improved, **Enemy capability** degraded significantly.
+
+  </TabItem>
+  <TabItem label="🤝 Negotiated Settlement">
+    
+**Terms acceptable** a both sides, **Face-saving** measures para enemy, **Concrete gains** para justify war costs, **Stability** para long-term peace.
+
+  </TabItem>
+</Tabs>
+
+### Proceso de Terminación
+
+**Negotiation de peace terms:**
+```
+Standard peace treaty elements:
+1. Territorial adjustments
+2. Resource compensation
+3. Future non-aggression terms
+4. Alliance/relationship status post-war
+5. Implementation timeline
+```
+
+**Formal termination:**
+```bash
+/f neutral <ex-enemy>        # End war status
+```
+
+### Post-Guerra Operations
+
+**Victory consolidation:**
+- **Secure all territorial gains** permanently
+- **Extract maximum value** desde captured resources
+- **Establish defensive positions** en new territory
+- **Integrate new assets** into faction operations
+
+**Relationship management:**
+- **Magnanimous victory** - Don't humiliate defeated enemy unnecessarily
+- **Clear boundaries** para future interactions
+- **Watch for revenge** planning
+- **Diplomatic integration** back into server community
+
+## Comandos de Guerra
+
+### Combat Commands
+
+```bash
+# Pre-guerra preparation
+/f enemy <facción>           # Declare war
+/f show <enemy>              # Monitor enemy status
+/f power                     # Check your contribution
+
+# Durante combat
+/f home                      # Retreat to safety
+/f coords                    # Share position with team
+/f chat f                    # Tactical communication
+
+# Post-victory
+/f claim                     # Overclaim territory
+/f vault 1                   # Secure captured resources
+```
+
+### Intelligence Commands
+
+```bash
+# Enemy monitoring
+/f show <multiple_enemies>   # Track multiple threats
+/f list                      # Server-wide situation
+/f map                       # Territorial intelligence
+
+# Strategic planning
+/f power                     # Your readiness level
+/f top power                 # Server power rankings
+```
+
+## Próximos Pasos
+
+Con dominio militar completo, puedes avanzar a:
+
+<CardGrid>
+  <Card title="💰 Economía y Recursos" icon="bars">
+    Financia tus máquinas de guerra y capitaliza victories.
+    
+    [Ver Economía →](/facciones/economia)
+  </Card>
+  
+  <Card title="🚀 Características Avanzadas" icon="puzzle">
+    Utiliza funciones especiales para advantage militar.
+    
+    [Ver Avanzado →](/facciones/avanzado)
+  </Card>
+  
+  <Card title="📋 Comandos Completos" icon="document">
+    Reference rápida de todos los comandos militares.
+    
+    [Ver Comandos →](/facciones/comandos)
+  </Card>
+</CardGrid>
+
+---
+
+*"La guerra es la continuación de la política por otros medios." - En facciones, la victoria pertenece no al más fuerte, sino al más inteligente, mejor preparado, y más unified.*

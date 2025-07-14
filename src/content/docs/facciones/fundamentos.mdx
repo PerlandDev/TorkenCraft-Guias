@@ -1,0 +1,366 @@
+---
+title: Fundamentos
+description: Aprende los conceptos básicos de Facciones - crear vs unirse, primeros pasos y supervivencia inicial
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+
+# Fundamentos de Facciones
+
+Esta sección te enseñará todo lo que necesitas saber para dar tus primeros pasos en el mundo de las facciones. Desde la decisión más importante (¿crear o unirse?) hasta sobrevivir tus primeros días sin perder todo tu progreso.
+
+## La Decisión Crítica: ¿Crear o Unirse?
+
+Esta es **la decisión más importante** que tomarás en facciones. Cada opción tiene ventajas y desventajas significativas:
+
+<Tabs>
+  <TabItem label="🏗️ Crear tu Facción">
+    
+**Ventajas de Crear:**
+Control total sobre decisiones y dirección, tu visión se convierte en realidad, liderazgo inmediato y experiencia de gestión, flexibilidad completa en reglas y estructura.
+
+**Desventajas de Crear:**
+Empiezas solo y extremadamente vulnerable, responsabilidad total de reclutar y liderar, curva de aprendizaje empinada mientras estás expuesto, target fácil para facciones establecidas.
+
+**¿Deberías crear si...?**
+✅ Tienes experiencia en Minecraft multiplayer  
+✅ Tienes amigos que se unirán contigo  
+✅ Entiendes que será difícil al principio  
+✅ Tienes tiempo para gestionar activamente  
+✅ No te importa empezar desde cero
+
+  </TabItem>
+  <TabItem label="🤝 Unirse a Facción">
+    
+**Ventajas de Unirse:**
+Protección inmediata bajo territorio establecido, aprende de veteranos sin consecuencias graves, recursos compartidos y apoyo del grupo, experiencia sin presión de liderazgo.
+
+**Desventajas de Unirse:**
+Sin control sobre decisiones importantes, puede ser expulsado sin previo aviso, dependes de otros para progreso, jerarquía establecida difícil de escalar.
+
+**¿Deberías unirte si...?**
+✅ Eres nuevo en facciones  
+✅ Prefieres aprender observando  
+✅ No tienes mucho tiempo para liderar  
+✅ Quieres protección inmediata  
+✅ Disfrutas siendo parte de algo más grande
+
+  </TabItem>
+</Tabs>
+
+:::tip[Recomendación para Principiantes]
+**95% de nuevos jugadores deberían UNIRSE primero.** Incluso si planeas crear tu propia facción eventualmente, la experiencia de estar en una facción establecida es invaluable.
+:::
+
+## Crear tu Primera Facción
+
+Si decidiste crear tu propia facción, aquí está el protocolo paso a paso:
+
+### Paso 1: Preparación Pre-Creación
+
+**Antes de usar `/f create`:**
+
+```bash
+# Investiga el servidor
+/f list                  # Ver facciones existentes
+/f top land             # Ver quién domina territorio
+/f top power            # Ver facciones más poderosas
+```
+
+**Análisis estratégico:**
+- **¿Hay espacio para nuevas facciones?** (Si top 10 son mega-facciones, será difícil)
+- **¿Qué tipos de facciones faltan?** (Comerciales, militares, neutrales)
+- **¿Dónde establecerte?** (Lejos de mega-facciones, cerca de recursos)
+
+### Paso 2: Fundación
+
+```bash
+/f create <nombre>       # ¡MOMENTO CRÍTICO!
+```
+
+:::danger[¡CUIDADO CON EL NOMBRE!]
+**El nombre es PERMANENTE** hasta que un admin lo cambie. Evita:
+- Nombres ofensivos (ban instantáneo)
+- Nombres muy largos (difíciles de escribir)
+- Nombres genéricos (confusión con otros)
+- Referencias a otras facciones (problemas legales)
+:::
+
+**Ejemplos de buenos nombres:**
+- `Imperio` - Simple y poderoso
+- `ComercioCentral` - Indica propósito
+- `AlianzaNorte` - Geográfico y diplomático
+- `GuardianesDelNorte` - Heroico y memorable
+
+### Paso 3: Configuración Inicial CRÍTICA
+
+**Inmediatamente después de crear:**
+
+```bash
+# 1. PRIORIDAD MÁXIMA - Establecer base
+/f sethome                    # Donde estés parado será tu base
+
+# 2. Descripción clara
+/f desc Facción comercial neutral. Comercio justo y alianzas estratégicas.
+
+# 3. Política de puertas abiertas inicialmente
+/f open                       # Permitir que otros se unan fácilmente
+```
+
+### Paso 4: Supervivencia Inmediata
+
+**Las primeras 24 horas son críticas:**
+
+1. **No te alejes de spawn** hasta tener al menos 3 miembros
+2. **Construye base temporal** en territorio seguro (cerca de spawn)
+3. **Recluta agresivamente** - necesitas poder urgentemente
+4. **Evita conflictos** a toda costa hasta fortalecerte
+
+```bash
+# Comandos de supervivencia inmediata
+/f home                      # Volver a base si hay peligro
+/f chat f                    # Comunicarte con nuevos miembros
+/f invite <jugador>          # Reclutar constantemente
+```
+
+## Unirse a una Facción Existente
+
+Si elegiste la ruta más inteligente (unirse primero), aquí está tu estrategia:
+
+### Investigación de Facciones
+
+**No te unas a la primera que te invite.** Investiga primero:
+
+```bash
+/f list                      # Ver todas las opciones
+/f show <facción>            # Investigar candidatos específicos
+```
+
+**Criterios de evaluación:**
+
+<CardGrid>
+  <Card title="📊 Estadísticas" icon="bars">
+    - **Miembros:** 5-20 es ideal (ni muy pequeña ni impersonal)
+    - **Poder:** Suficiente para su territorio
+    - **Territorio:** Bien distribuido, no desperdigado
+    - **Última actividad:** Miembros online recientemente
+  </Card>
+  
+  <Card title="🛡️ Estabilidad" icon="shield">
+    - **Tiempo existiendo:** Al menos 2 semanas
+    - **Liderazgo activo:** Admin/coleader online frecuentemente
+    - **Sin guerras activas:** Evita facciones en conflicto
+    - **Relaciones equilibradas:** Ni demasiados enemigos ni aliados
+  </Card>
+  
+  <Card title="🎯 Compatibilidad" icon="heart">
+    - **Estilo de juego:** ¿PvP, construcción, comercio?
+    - **Horarios:** ¿Activos cuando tú juegas?
+    - **Cultura:** ¿Ambiente serio o casual?
+    - **Idioma:** Comunicación fluida
+  </Card>
+</CardGrid>
+
+### Proceso de Aplicación
+
+**Cómo causar buena primera impresión:**
+
+1. **Acércate profesionalmente:**
+```
+/msg <líder> Hola! Estoy interesado en unirme a [Facción]. 
+¿Podrías contarme sobre sus objetivos y qué buscan en nuevos miembros?
+```
+
+2. **Demuestra valor inmediato:**
+   - Menciona tus habilidades (redstone, construcción, PvP)
+   - Muestra tu actividad (horas que juegas)
+   - Demuestra conocimiento básico de facciones
+
+3. **Sé honesto sobre tu experiencia:**
+   - No finjas ser experto si eres nuevo
+   - Muestra disposición a aprender
+   - Pregunta sobre reglas y expectativas
+
+### Primeros Días como Miembro
+
+**Tu período de prueba:**
+
+```bash
+# Comandos esenciales como nuevo miembro
+/f home                      # Familiarízate con la base
+/f show                      # Estudia estadísticas de tu facción
+/f chat f                    # Presenta te activamente
+/f map                       # Aprende el territorio
+```
+
+**Cómo sobresalir:**
+
+<Tabs>
+  <TabItem label="📈 Contribución Activa">
+    
+**Deposita recursos** regularmente al almacén común, **participa en proyectos** de construcción grupales, **ofrece ayuda** a otros miembros nuevos, **mantente online** durante eventos importantes, **sigue órdenes** sin discutir (al principio).
+
+  </TabItem>
+  <TabItem label="💬 Comunicación">
+    
+**Usa el chat de facción** frecuentemente pero no spam, **reporta información útil** sobre enemigos o recursos, **haz preguntas inteligentes** que muestren interés, **responde rápidamente** cuando te llamen, **sé positivo** y mantén moral alta.
+
+  </TabItem>
+  <TabItem label="🛡️ Supervivencia">
+    
+**NO MUERAS** innecesariamente (reduces poder de facción), **evita provocar** a otras facciones, **respeta territorio aliado** y neutral, **no uses recursos** sin permiso, **informa problemas** inmediatamente.
+
+  </TabItem>
+</Tabs>
+
+## Comandos Básicos de Supervivencia
+
+Estos comandos te mantendrán vivo y útil desde el primer día:
+
+### Navegación y Ubicación
+
+```bash
+/f home                      # Tu comando más importante - base segura
+/f map                       # Ver territorio circundante
+/f map auto                  # Actualización automática al caminar
+/f coords                    # Compartir ubicación con facción
+/f stuck                     # Escape de emergencia (teletransporte)
+```
+
+### Información y Investigación
+
+```bash
+/f show                      # Tu facción actual (poder, territorio, miembros)
+/f show <facción>            # Espiar otras facciones
+/f list                      # Todas las facciones del servidor
+/f power                     # Tu poder personal
+/f power <jugador>           # Poder de otro jugador
+```
+
+### Comunicación
+
+```bash
+/f chat f                    # Chat solo facción
+/f chat a                    # Chat aliados (si tienes)
+/f chat p                    # Chat público (normal)
+/f invite <jugador>          # Invitar nuevos miembros (si tienes permiso)
+```
+
+### Territorio
+
+```bash
+/f claim                     # Reclamar chunk actual (requiere permisos)
+/f unclaim                   # Liberar chunk (útil si expansión fue mala)
+/f owner                     # Ver propietario específico del chunk
+```
+
+## Errores Fatales de Principiante
+
+Evita estos errores que destruyen facciones novatas:
+
+### ❌ Error #1: Muerte Innecesaria
+
+**El problema:** Cada muerte reduce tu poder y el de tu facción
+**Consecuencias:** Territorio vulnerable, pérdida de respeto, facción raidable
+
+**Cómo evitarlo:**
+- Usa `/f home` al primer signo de peligro
+- No explores territorio enemigo solo
+- Lleva comida siempre
+- Aprende a usar `/f stuck`
+
+### ❌ Error #2: Expansion Prematura
+
+**El problema:** Reclamar territorio sin poder suficiente para defenderlo
+**Consecuencias:** Territorio robado, recursos perdidos, facción vulnerable
+
+**Cómo evitarlo:**
+```bash
+/f show                      # Verifica que Poder > Territorio SIEMPRE
+```
+- Regla de oro: Poder debe ser al menos 150% del territorio
+- Reclama gradualmente, no en oleadas masivas
+
+### ❌ Error #3: Confianza Ciega
+
+**El problema:** Dar permisos altos a miembros no probados
+**Consecuencias:** Robos internos, sabotaje, disolución de facción
+
+**Cómo evitarlo:**
+- Nuevo miembro = recluta por al menos 1 semana
+- Solo da permisos después de pruebas reales
+- **NUNCA** hagas admin a alguien impulsivamente
+
+### ❌ Error #4: Provocar Innecesariamente
+
+**El problema:** Insultar o atacar facciones más poderosas
+**Consecuencias:** Guerra unilateral, destrucción garantizada
+
+**Cómo evitarlo:**
+- Mantén perfil bajo primeras semanas
+- Sé diplomático incluso con enemigos
+- No respondas a provocaciones
+
+### ❌ Error #5: Base Obvia
+
+**El problema:** Construir base visible y accesible
+**Consecuencias:** Target fácil para raids, pérdida de recursos
+
+**Cómo evitarlo:**
+- Base subterránea o camuflada
+- Múltiples entradas/salidas
+- Distribución de recursos en varios chunks
+
+## Tu Primera Semana: Checklist de Supervivencia
+
+### Día 1-2: Establecimiento
+- [ ] Unirse a facción o crear (con al menos 3 amigos)
+- [ ] Establecer base temporal segura
+- [ ] Aprender comandos básicos esenciales
+- [ ] **No morir** bajo ninguna circunstancia
+
+### Día 3-4: Integración
+- [ ] Conocer todos los miembros activos
+- [ ] Familiarizarse con territorio de facción
+- [ ] Contribuir recursos al almacén común
+- [ ] Participar en al menos 2 proyectos grupales
+
+### Día 5-7: Crecimiento
+- [ ] Ayudar a reclutar al menos 1 nuevo miembro
+- [ ] Demostrar habilidades específicas (PvP, construcción, etc.)
+- [ ] Aprender sobre facciones vecinas (aliados/enemigos)
+- [ ] Solicitar aumento de rango si aplicable
+
+:::note[Mentalidad del Éxito]
+**"Piensa a largo plazo, actúa conservadoramente"** - Las facciones exitosas se construyen con paciencia y decisiones inteligentes, no con movimientos arriesgados.
+:::
+
+## Próximos Pasos
+
+Una vez que domines estos fundamentos, estarás listo para:
+
+<CardGrid>
+  <Card title="⚡ Sistema de Poder" icon="lightning">
+    Comprende las mecánicas que controlan todo en facciones.
+    
+    [Aprender Poder y Territorio →](/facciones/poder-territorio)
+  </Card>
+  
+  <Card title="🤝 Diplomacia" icon="heart">
+    Maestría en relaciones entre facciones.
+    
+    [Ver Diplomacia →](/facciones/diplomacia)
+  </Card>
+  
+  <Card title="📋 Comandos Completos" icon="document">
+    Referencia completa de todos los comandos.
+    
+    [Ver Comandos →](/facciones/comandos)
+  </Card>
+</CardGrid>
+
+**¿Te sientes cómodo con estos fundamentos?** El siguiente paso lógico es entender el [Sistema de Poder y Territorio](/facciones/poder-territorio), ya que controla todo lo que puedes hacer en facciones.
+
+---
+
+*Recuerda: Todos los maestros de facciones fueron principiantes una vez. La diferencia está en aprender de los errores sin que te cuesten todo tu progreso.*

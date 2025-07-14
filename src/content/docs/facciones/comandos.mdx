@@ -1,0 +1,619 @@
+---
+title: Comandos Completos
+description: Referencia completa de todos los comandos organizados por categorías con ejemplos prácticos de uso
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+
+# Comandos Completos de Facciones
+
+Esta es tu referencia definitiva de todos los comandos disponibles en el plugin de Facciones. Están organizados por categorías para encontrar rápidamente lo que necesitas en cualquier situación.
+
+## 🚨 Comandos de Emergencia
+
+**Para situaciones críticas que requieren acción inmediata:**
+
+```bash
+/f home                      # Teletransporte a tu base (comando más importante)
+/f stuck                     # Escape de emergencia si estás atrapado
+/f chat f                    # Comunicación urgente con tu facción
+/f show                      # Evaluar estado de tu facción rápidamente
+/f power                     # Ver tu poder actual
+/f map                       # Situación territorial inmediata
+```
+
+:::danger[Comando de Pánico]
+**Si estás bajo ataque y perdiendo:** `/f home` inmediatamente, luego `/f chat f Bajo ataque en [coordenadas]` para pedir ayuda.
+:::
+
+## 🏗️ Comandos Básicos de Supervivencia
+
+### Creación y Unión
+
+<Tabs>
+  <TabItem label="🆕 Crear Facción">
+    
+```bash
+/f create <nombre>           # Crear nueva facción
+/f desc <descripción>        # Establecer descripción
+/f sethome                   # Establecer base (CRÍTICO)
+/f open                      # Permitir uniones sin invitación
+```
+
+**Ejemplo completo:**
+```bash
+/f create MiImperio
+/f desc "Facción comercial neutral - Comercio justo y alianzas estratégicas"
+/f sethome
+/f open
+```
+
+  </TabItem>
+  <TabItem label="🤝 Unirse a Facción">
+    
+```bash
+/f list                      # Ver todas las facciones
+/f show <facción>            # Investigar facción específica
+/f join <facción>            # Unirse (si es abierta)
+/f leave                     # Dejar facción actual
+```
+
+**Proceso recomendado:**
+```bash
+/f list
+/f show TargetFaction
+/f join TargetFaction
+```
+
+  </TabItem>
+</Tabs>
+
+### Navegación y Ubicación
+
+```bash
+/f home                      # Ir a base de facción
+/f coords                    # Compartir ubicación con facción
+/f map                       # Mapa de territorio local
+/f map auto                  # Auto-actualización del mapa
+/f stuck                     # Teletransporte de emergencia
+```
+
+### Información Básica
+
+```bash
+/f show                      # Tu facción (poder, territorio, miembros)
+/f show <facción>            # Información de otra facción
+/f list                      # Todas las facciones del servidor
+/f power                     # Tu poder personal
+/f power <jugador>           # Poder de otro jugador
+```
+
+## 🗺️ Comandos de Territorio
+
+### Reclamación de Tierra
+
+<CardGrid>
+  <Card title="📍 Reclamación Básica" icon="map-pin">
+    ```bash
+    /f claim                 # Chunk actual
+    /f claim 3               # Radio de 3 chunks
+    /f claimline norte 5     # 5 chunks al norte
+    /f claimfill 4           # Llenar huecos hasta 4 chunks
+    ```
+  </Card>
+  
+  <Card title="🔄 Reclamación Automática" icon="refresh-cw">
+    ```bash
+    /f autoclaim             # Activar auto-reclamo
+    # Camina y cada chunk se reclama automáticamente
+    /f autoclaim             # Desactivar (IMPORTANTE)
+    ```
+  </Card>
+</CardGrid>
+
+### Liberación de Territorio
+
+```bash
+/f unclaim                   # Liberar chunk actual
+/f unclaimall                # Liberar TODO el territorio (¡PELIGROSO!)
+/f unclaimfill 3             # Liberar área contigua
+/f autounclaim               # Auto-liberación mientras caminas
+```
+
+:::warning[Cuidado con unclaimall]
+**`/f unclaimall` libera TODA tu tierra instantáneamente.** Solo usar en emergencias extremas cuando estés a punto de ser completamente overclaimado.
+:::
+
+### Gestión de Propietarios
+
+```bash
+/f owner <jugador>           # Dar propiedad exclusiva del chunk
+/f owner                     # Quitar todos los propietarios
+/f ownerlist                 # Ver propietarios del chunk actual
+```
+
+**Ejemplo de uso estratégico:**
+```bash
+/f owner AdminName           # Base principal solo para admin
+/f owner ModeratorName       # Área de construcción para moderador
+/f owner                     # Área pública sin propietarios
+```
+
+### Información Territorial
+
+```bash
+/f listclaims                # Ver todos tus chunks reclamados
+/f listclaims <mundo>        # Chunks en mundo específico
+/f map                       # Territorio circundante
+/f seechunk                  # Ver límites de chunk visualmente
+```
+
+## 👥 Comandos de Gestión de Miembros
+
+### Invitaciones y Reclutamiento
+
+<Tabs>
+  <TabItem label="📨 Invitaciones">
+    
+```bash
+/f invite <jugador>          # Invitar jugador
+/f deinvite <jugador>        # Cancelar invitación
+/f showinvites               # Ver invitaciones pendientes
+```
+
+**Proceso completo de reclutamiento:**
+```bash
+/f invite NuevoJugador
+# Verificar después de un tiempo
+/f showinvites
+# Si no acepta
+/f deinvite NuevoJugador
+```
+
+  </TabItem>
+  <TabItem label="🚪 Entrada y Salida">
+    
+```bash
+/f join <facción>            # Unirse (como invitado o facción abierta)
+/f leave                     # Dejar facción
+/f open                      # Abrir facción para uniones libres
+/f close                     # Cerrar (solo por invitación)
+```
+
+  </TabItem>
+</Tabs>
+
+### Sistema de Rangos
+
+```bash
+/f promote <jugador>         # Ascender un rango
+/f mod <jugador>             # Dar/quitar rango moderador
+/f coleader <jugador>        # Dar/quitar coleader (solo 1 permitido)
+/f admin <jugador>           # Transferir liderazgo completo (¡PELIGROSO!)
+```
+
+**Jerarquía de promociones:**
+```bash
+# Progresión normal:
+Recluta → /f promote → Miembro → /f mod → Moderador → /f coleader → Coleader
+```
+
+:::danger[Transferencia de Admin]
+**`/f admin <jugador>` transfiere control TOTAL de tu facción.** Solo usar con personas de confianza absoluta.
+:::
+
+### Disciplina y Baneos
+
+```bash
+/f kick <jugador>            # Expulsar inmediatamente
+/f ban <jugador>             # Banear permanentemente
+/f unban <jugador>           # Quitar ban
+/f banlist                   # Ver lista de baneados
+```
+
+## 🤝 Comandos de Relaciones Diplomáticas
+
+### Estados de Relación
+
+<CardGrid>
+  <Card title="❤️ Alianzas" icon="heart">
+    ```bash
+    /f ally <facción>        # Proponer alianza
+    # (Ambas facciones deben usar el comando)
+    ```
+  </Card>
+  
+  <Card title="⚔️ Guerra" icon="swords">
+    ```bash
+    /f enemy <facción>       # Declarar guerra
+    # (Unilateral - no requiere confirmación)
+    ```
+  </Card>
+  
+  <Card title="🤝 Neutral" icon="handshake">
+    ```bash
+    /f neutral <facción>     # Volver a neutral
+    # (Desde cualquier otro estado)
+    ```
+  </Card>
+  
+  <Card title="🕊️ Tregua" icon="dove">
+    ```bash
+    /f truce <facción>       # Proponer tregua
+    # (Ambas deben confirmar)
+    ```
+  </Card>
+</CardGrid>
+
+**Ejemplo de escalación diplomática:**
+```bash
+# Relación tensa que mejora:
+/f enemy FaccionProblema     # Estado inicial de guerra
+/f neutral FaccionProblema   # Cese al fuego
+/f truce FaccionProblema     # Paz formal
+/f ally FaccionProblema      # Alianza completa
+```
+
+## 💬 Comandos de Comunicación
+
+### Canales de Chat
+
+```bash
+/f chat p                    # Chat público (normal del servidor)
+/f chat f                    # Chat solo facción
+/f chat a                    # Chat aliados
+/f chat t                    # Chat tregua
+/f chat m                    # Chat moderadores (si disponible)
+```
+
+### Comunicación Avanzada
+
+```bash
+/f announce <mensaje>        # Anuncio a todos los miembros
+/f coords                    # Compartir ubicación actual
+/f title <jugador> <título>  # Dar título personalizado
+```
+
+**Ejemplos de uso:**
+```bash
+/f announce "Reunión de guerra en 10 minutos en la base principal"
+/f coords                    # Comparte: "Mi ubicación: X: 1234, Y: 67, Z: -890"
+/f title VeteranoPvP "Campeón de Guerra"
+```
+
+## 🏠 Comandos de Bases y Warps
+
+### Sistema de Bases
+
+<Tabs>
+  <TabItem label="🏠 Base Principal">
+    
+```bash
+/f sethome                   # Establecer base (solo en tu territorio)
+/f home                      # Ir a base
+/f delhome                   # Eliminar base
+```
+
+**Limitaciones importantes:**
+Solo UNA base por facción, debe estar en territorio reclamado, todos los miembros pueden usarla.
+
+  </TabItem>
+  <TabItem label="🌟 Sistema de Warps">
+    
+```bash
+/f setwarp <nombre>          # Crear warp público
+/f setwarp <nombre> <pass>   # Crear warp con contraseña
+/f warp <nombre>             # Usar warp público
+/f warp <nombre> <pass>      # Usar warp protegido
+/f delfwarp <nombre>         # Eliminar warp
+```
+
+**Ejemplos estratégicos:**
+```bash
+/f setwarp comercio          # Warp público para comercio
+/f setwarp militar secreto123 # Warp militar con contraseña
+/f setwarp mina             # Warp a zona de mining
+```
+
+  </TabItem>
+</Tabs>
+
+## 💰 Comandos de Economía
+
+### Banco de Facción
+
+```bash
+/f money balance             # Ver fondos de facción
+/f money deposit <cantidad>  # Depositar dinero
+/f money withdraw <cantidad> # Retirar dinero
+```
+
+### Sistema de TNT
+
+```bash
+/f tnt info                  # Ver TNT disponible
+/f tnt deposit <cantidad>    # Depositar TNT al banco
+/f tnt withdraw <cantidad>   # Retirar TNT
+/f tnt fill <radio>          # Llenar dispensadores cercanos
+/f tnt siphon <radio>        # Recoger TNT de dispensadores
+```
+
+**Ejemplo de preparación para guerra:**
+```bash
+/f tnt deposit 128           # Depositar 2 stacks
+/f tnt info                  # Verificar: "Tu facción tiene 128 TNT"
+/f tnt fill 5                # Llenar dispensadores en radio 5
+```
+
+### Bóvedas
+
+```bash
+/f vault 1                   # Abrir primera bóveda
+/f vault 2                   # Segunda bóveda (si disponible)
+/f vault 3                   # Tercera bóveda (si disponible)
+```
+
+## 🔧 Comandos de Configuración
+
+### Configuración de Facción
+
+```bash
+/f desc <descripción>        # Cambiar descripción
+/f tag <nuevo_nombre>        # Cambiar nombre (solo admins servidor)
+/f open                      # Abrir para uniones libres
+/f close                     # Cerrar (solo invitaciones)
+```
+
+### Permisos Avanzados
+
+```bash
+/f perms                     # Abrir menú de permisos GUI
+/f perm set <acción> <relación> <allow/deny> # Configurar permiso específico
+```
+
+**Ejemplos de configuración de permisos:**
+```bash
+/f perm set build ally allow     # Aliados pueden construir
+/f perm set container enemy deny # Enemigos no pueden abrir cofres
+```
+
+## ✈️ Comandos Avanzados
+
+### Sistema de Vuelo
+
+```bash
+/f fly                       # Activar/desactivar vuelo
+/f flytrails <efecto>        # Cambiar efectos de vuelo
+```
+
+**Efectos disponibles comunes:**
+```bash
+/f flytrails flame           # Estela de fuego
+/f flytrails heart           # Corazones
+/f flytrails none            # Sin efectos
+```
+
+### Comandos de Estado
+
+```bash
+/f status <jugador>          # Estado y última conexión
+/f near                      # Miembros cercanos
+/f logins                    # Toggle notificaciones login/logout
+/f togglesb                  # Toggle scoreboard
+```
+
+## 🔍 Comandos de Información
+
+### Rankings y Estadísticas
+
+```bash
+/f top land                  # Facciones por territorio
+/f top power                 # Facciones por poder
+/f top members               # Facciones por miembros
+/f top online                # Facciones por actividad
+/f top balance               # Facciones por dinero
+```
+
+### Información Detallada
+
+```bash
+/f show <facción>            # Info completa de facción
+/f version                   # Versión del plugin
+/f help                      # Ayuda general
+/f help <comando>            # Ayuda específica
+```
+
+## 👑 Comandos de Administración
+
+### Para Líderes de Facción
+
+```bash
+/f disband                   # Disolver facción (irreversible)
+/f setdefaultrole <rol>      # Cambiar rol por defecto para nuevos
+/f setmaxvaults <número>     # Establecer número máximo de bóvedas
+```
+
+### Para Admins del Servidor
+
+```bash
+/f bypass                    # Modo bypass (construir en cualquier lado)
+/f chatspy                   # Espiar chats de facciones
+/f lock                      # Bloquear sistema de facciones
+/f reload                    # Recargar configuración
+/f saveall                   # Guardar todos los datos
+```
+
+## 🗺️ Comandos de Mapas y Navegación
+
+### Visualización
+
+```bash
+/f map                       # Mapa básico 3x3
+/f map auto                  # Auto-actualización al moverse
+/f map <tamaño>              # Mapa de tamaño específico
+/f mapheight <líneas>        # Ajustar líneas del mapa
+```
+
+### Información de Chunks
+
+```bash
+/f seechunk                  # Ver límites de chunk
+/f coords                    # Coordenadas actuales
+/f listclaims                # Lista de todos tus chunks
+```
+
+## ⚡ Comandos por Situación
+
+### 🚨 En Emergencia
+
+```bash
+/f home                      # Escape inmediato
+/f stuck                     # Si home no funciona
+/f chat f ¡AYUDA!           # Pedir ayuda urgente
+/f power                     # Verificar tu estado
+```
+
+### ⚔️ En Guerra
+
+```bash
+/f enemy <facción>           # Declarar guerra
+/f show <enemigo>            # Monitorear su poder
+/f claim                     # Overclaiming cuando sean raidables
+/f coords                    # Compartir posición táctica
+```
+
+### 🏗️ Expandiendo Territorio
+
+```bash
+/f power                     # Verificar poder disponible
+/f claim                     # Reclamar chunk por chunk
+/f autoclaim                 # Para expansión rápida
+/f map                       # Ver progreso de expansión
+```
+
+### 🤝 En Diplomacia
+
+```bash
+/f ally <facción>            # Proponer alianza
+/f show <facción>            # Investigar antes de aliarse
+/f neutral <facción>         # Terminar relación actual
+/f chat a                    # Comunicar con aliados
+```
+
+### 💰 Gestionando Recursos
+
+```bash
+/f money balance             # Ver fondos
+/f tnt info                  # Ver TNT disponible
+/f vault 1                   # Acceder a almacenamiento seguro
+/f owner <jugador>           # Proteger área importante
+```
+
+## 📱 Comandos de Referencia Rápida
+
+### Top 10 Más Usados
+
+```bash
+1. /f home                   # Ir a base
+2. /f map                    # Ver territorio
+3. /f show                   # Estado de facción
+4. /f claim                  # Reclamar tierra
+5. /f chat f                 # Chat de facción
+6. /f invite <jugador>       # Invitar miembro
+7. /f power                  # Ver poder
+8. /f coords                 # Compartir ubicación
+9. /f ally <facción>         # Formar alianza
+10. /f enemy <facción>       # Declarar guerra
+```
+
+### Comandos de Un Solo Uso
+
+```bash
+/f create <nombre>           # Solo al crear facción
+/f leave                     # Solo al abandonar
+/f disband                   # Solo al disolver
+/f admin <jugador>           # Solo al transferir liderazgo
+```
+
+### Comandos Diarios
+
+```bash
+/f show                      # Revisar estado
+/f map                       # Situación territorial
+/f chat f                    # Comunicación rutinaria
+/f coords                    # Compartir ubicación
+```
+
+## 🔧 Tips de Uso Eficiente
+
+### Aliases y Shortcuts
+
+La mayoría de comandos tienen versiones cortas:
+```bash
+/f c = /f claim
+/f h = /f home  
+/f m = /f map
+/f s = /f show
+```
+
+### Comandos en Secuencia
+
+**Rutina de inicio de sesión:**
+```bash
+/f show                      # Ver estado general
+/f power                     # Tu poder personal
+/f map                       # Situación territorial
+/f chat f Hola, estoy online # Saludar a facción
+```
+
+**Rutina de expansión:**
+```bash
+/f power                     # Verificar poder disponible
+/f map                       # Planificar expansión
+/f claim                     # Reclamar nuevo territorio
+/f owner <tu_nombre>         # Proteger si es importante
+```
+
+**Rutina de guerra:**
+```bash
+/f show <enemigo>            # Estado del enemigo
+/f enemy <facción>           # Declarar guerra
+/f chat f Guerra declarada   # Informar a facción
+/f coords                    # Posición para ataque
+```
+
+---
+
+## 📚 Enlaces a Secciones Detalladas
+
+Para información completa sobre el uso de estos comandos:
+
+<CardGrid>
+  <Card title="🎯 Fundamentos" icon="rocket">
+    Comandos básicos explicados paso a paso.
+    
+    [Ver Fundamentos →](/facciones/fundamentos)
+  </Card>
+  
+  <Card title="⚡ Poder y Territorio" icon="lightning">
+    Comandos de reclamación y gestión de poder.
+    
+    [Ver Poder →](/facciones/poder-territorio)
+  </Card>
+  
+  <Card title="🤝 Diplomacia" icon="heart">
+    Comandos de relaciones entre facciones.
+    
+    [Ver Diplomacia →](/facciones/diplomacia)
+  </Card>
+  
+  <Card title="⚔️ Guerra" icon="swords">
+    Comandos militares y de combate.
+    
+    [Ver Guerra →](/facciones/guerra)
+  </Card>
+</CardGrid>
+
+---
+
+*¿No encuentras un comando específico? Usa `/f help` en el juego para ver todos los comandos disponibles en tu servidor específico, ya que algunos pueden variar según la configuración.*
